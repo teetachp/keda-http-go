@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: keda-app-service
+spec:
+  selector:
+    app: keda-app-demo-deployment
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080

@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: keda-app-demo-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: keda-app-demo-deployment
+  template:
+    metadata:
+      labels:
+        app: keda-app-demo-deployment
+    spec:
+      containers:
+      - name: keda-app-demo
+        image: keda-app-demo
+        imagePullPolicy: Never
+        ports:
+            - containerPort: 8080
